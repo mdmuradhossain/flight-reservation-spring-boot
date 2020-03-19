@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/createFlight}" method="POST" th:object="${flight}">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Flight Number</label>
+    <input type="text" class="form-control" th:field="*{flightNumber}">
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Airlines Name</label>
+    <input type="text" class="form-control" th:field=*{airlinesName}>
+  </div>
+  <div class="form-group form-check">
+  <label class="form-check-label" for="exampleCheck1">Departure City</label>
+    <input type="text" class="form-check-input" th:field="*{departureCity}">
+    
+  </div>
+  <div class="form-group form-check">
+  <label class="form-check-label" for="exampleCheck1">Arrival City</label>
+    <input type="text" class="form-check-input" th:field="*{arrivalCity}">
+    
+  </div>
+  <!-- <div class="form-group form-check">
+    <label class="form-check-label" for="exampleCheck1">Date Of Departure</label>
+    <input type="date" class="form-check-input" th:field="*{dateOfDeparture}">
+  
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">Departure Time</label>
+    <input type="datetime" class="form-control" th:field="*{estimatedDepartureTime}">
+  </div> -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

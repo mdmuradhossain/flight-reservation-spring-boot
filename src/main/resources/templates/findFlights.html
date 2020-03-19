@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Find Flights</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <form th:action="@{/findFlights}" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">From</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{from}">
+   
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">TO</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" th:field="*{to}">
+  </div>
+  <div class="form-group form-check">
+  <label class="form-check-label" for="exampleCheck1">Departure Date</label>
+    <input type="date" class="form-check-input" id="exampleCheck1">
+    
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
