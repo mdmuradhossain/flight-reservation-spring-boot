@@ -32,8 +32,12 @@ public class UserController {
 		return "registration/signin";
 	}
 
+	@RequestMapping("/showSignIn")
+	public String showSignIn() {
+		return "reregistration/signin";
+	}
 	@RequestMapping(value = "/signin",method = RequestMethod.POST)
-	public String signin(@RequestParam("email") String email, @RequestParam("password") String password, Model model) {
+	public String signin(@RequestParam(required = false, name ="email") String email, @RequestParam(required = false, name ="password") String password, Model model) {
 		User user = userRepository.findByEmail(email);
 		if (user.getPassword().equals(password)) {
 			return "findFlights";

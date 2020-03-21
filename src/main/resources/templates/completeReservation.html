@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Complete</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+	
+		<div class="row">
+			<div class="col-md-8">
+				<form>
+					<div class="form-group">
+						<label for="firstName">First Name</label> <input
+							type="text" class="form-control" th:field="*{firstName}"/> 
+					</div>
+					<div class="form-group">
+						<label for="middleName">Middle Name</label> <input
+							type="text" class="form-control" id="" th:field="*{middleName}">
+					</div>
+					<div class="form-group">
+						<label for="lastName">Last Name</label> <input
+							type="text" class="form-control" th:field="*{lastName}"/> 
+					</div>
+					<div class="form-group">
+						<label for="">Email address</label> <input
+							type="email" class="form-control" th:field="*{email}"/> 
+					</div>
+					<div class="form-group">
+						<label for="">Phone</label> <input
+							type="text" class="form-control" th:field="*{phone}"/> 
+					</div>
+					<input type="hidden" name="flightId" th:value="${flightId}"/>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -28,10 +28,16 @@ public class Passenger {
 	@Column(name = "last_name")
 	private String lastName;
 
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "phone")
+	private String phone;
+
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "reservation_id", referencedColumnName = "id")
+	@JoinColumn(name = "reservation_id", referencedColumnName = "id")
 	private Reservation reservation;
-	
+
 	public Passenger() {
 
 	}
@@ -73,6 +79,22 @@ public class Passenger {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public Reservation getReservation() {

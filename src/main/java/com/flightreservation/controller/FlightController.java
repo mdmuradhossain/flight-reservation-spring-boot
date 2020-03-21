@@ -34,10 +34,10 @@ public class FlightController {
 		return "displayFlights";
 	}
 
-	@RequestMapping("/showFindFlight")
-	public String showFindFlight() {
-		return "findFlights";
-	}
+	//@RequestMapping("/showFindFlight")
+	//public String showFindFlight() {
+	//	return "findFlights";
+	//}
 
 	@RequestMapping("/findFlights")
 	public String findFlights(@RequestParam(required = false, name = "from") String from,
