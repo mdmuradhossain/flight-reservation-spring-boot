@@ -34,7 +34,7 @@ public class UserController {
 
 	@RequestMapping("/showSignIn")
 	public String showSignIn() {
-		return "reregistration/signin";
+		return "registration/signin";
 	}
 	@RequestMapping(value = "/signin",method = RequestMethod.POST)
 	public String signin(@RequestParam(required = false, name ="email") String email, @RequestParam(required = false, name ="password") String password, Model model) {

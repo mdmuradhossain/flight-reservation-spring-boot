@@ -31,18 +31,18 @@ public class FlightController {
 	@PostMapping("/createFlight")
 	public String createFlight(@ModelAttribute("flight") Flight flight) {
 		flightRepository.save(flight);
-		return "displayFlights";
+		return "findFlights";
 	}
 
-	//@RequestMapping("/showFindFlight")
-	//public String showFindFlight() {
-	//	return "findFlights";
-	//}
+	@RequestMapping("/showFindFlight")
+	public String showFindFlight() {
+		return "findFlights";
+	}
 
 	@RequestMapping("/findFlights")
 	public String findFlights(@RequestParam(required = false, name = "from") String from,
 			@RequestParam(required = false, name = "to") String to,
-			@RequestParam(required = false, name = "dateOfDeparture") @DateTimeFormat(pattern = "DD-MM-YYYY") Date dateOfDeparture,
+			@RequestParam(required = false, name = "dateOfDeparture") @DateTimeFormat(pattern = "YYYY-MM-DD") Date dateOfDeparture,
 			Model model) {
 		List<Flight> flights = flightRepository.findFlights(from, to, dateOfDeparture);
 		model.addAttribute("flights", flights);
