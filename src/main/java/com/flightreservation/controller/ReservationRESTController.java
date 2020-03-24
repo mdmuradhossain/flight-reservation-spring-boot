@@ -21,7 +21,7 @@ public class ReservationRESTController {
 	@Autowired
 	private ReservationRepository reservationRepository;
 
-	@RequestMapping("/reservation/{id}")
+	@RequestMapping("/reservations/{id}")
 	public Reservation findReservation(@PathVariable("id") Long id) {
 		Reservation reservation = reservationRepository.findById(id).get();
 		return reservation;
